@@ -1,0 +1,25 @@
+<div class="menu">
+  <%= link_to "Home", home_path, :class => current_class?(home_path) %>
+  <%= link_to "Projects", projects_path, :class => current_class?(projects_path) %>
+  <%= link_to "About", about_path, :class => current_class?(about_path) %>
+  <%= link_to "Contact", contact_path, :class => current_class?(contact_path) %>
+</div>
+
+<div class="header">
+  <div class="header__left">
+    <a href="index.html" class="logo">Gb</a>
+  </div>
+  <div class="filler"></div>
+  <div class="header__right">
+    <%= link_to "Home", home_path, :class => current_class?(home_path) %>
+    <%= link_to "Projects", projects_path, :class => current_class?(projects_path) %>
+    <%= link_to "About", about_path, :class => current_class?(about_path) %>
+    <%= link_to "Contact", contact_path, :class => current_class?(contact_path) %>
+  </div>
+
+  <div class="menu-btn" onclick="clickMenu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
