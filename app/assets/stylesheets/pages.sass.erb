@@ -8,6 +8,9 @@ $display-font: 'Yellowtail', cursive
 $heading-font: 'Josefin Sans', sans-serif
 $text-font: 'Ubuntu', sans-serif
 
+// *
+//   transition: .2s ease-in-out
+
 html
   margin: 0
   padding: 0
@@ -281,6 +284,7 @@ a
   padding: 0
   position: relative
   background-image: $primary-background
+  box-shadow: 0 5px 50px rgba(255, 255, 255, 0.2)
 
 .row
   display: flex
@@ -650,3 +654,6 @@ form .options a:hover:before
 
   form
     width: 90%
+
+  .btn
+    max-width: 100%
