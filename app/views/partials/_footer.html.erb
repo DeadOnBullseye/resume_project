@@ -1,13 +1,22 @@
 <div class="footer">
   <div class="footer-content" style="padding: 20px 20px;">
     <div class="footer-content__section-1">
-      Copyright &copy; 2018
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-codepen"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="mailto: deadonbullseye@gmail.com" class="mail"><i class="fas fa-envelope"></i></a>
     </div>
     <div class="footer-content__section-2">
-      <a>Twitter</a>
-      <a>Instagram</a>
-      <a>Codepen</a>
-      <a>Github</a>
+      <%= link_to "Home", home_path, :class => current_class?(home_path) %>
+      <%= link_to "Projects", projects_path, :class => current_class?(projects_path) %>
+      <%= link_to "About", about_path, :class => current_class?(about_path) %>
+      <%= link_to "Contact", contact_path, :class => current_class?(contact_path) %>
+    </div>
+    <hr class="footer-hr">
+    <div class="footer-content__section-3">
+      Copyright &copy; 2019 Griffin Bunnell Design | All Rights Reserved
     </div>
   </div>
 </div>
