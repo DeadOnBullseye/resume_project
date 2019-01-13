@@ -21,6 +21,24 @@
     </div>
   </div>
 
+  <div class="main">
+    <div class="row">
+      <div class="content" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <form id="gform" method="POST" data-email="deadonbullseye@gmail.com"
+        action="">
+
+          <div class="form__heading" style="align-self: center;">Contact Me</div>
+          <input id="name" type="text" name="name" required placeholder="Name" />
+          <input id="email" name="email" type="email" required placeholder="Email"/>
+          <input id="phone" name="phone" type="text"required placeholder="Phone Number"/>
+          <textarea id="message" name="message" required placeholder="Message"></textarea>
+          <div class="btn" onclick="this.parentNode.submit();" style="margin-top: 10px">Send</div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
   <%= render 'partials/footer' %>
 
 </body>
