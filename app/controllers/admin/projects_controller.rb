@@ -1,4 +1,4 @@
-class Admin::PostsController < ApplicationController
+class Admin::ProjectsController < ApplicationController
   def new
   end
 
@@ -11,7 +11,7 @@ class Admin::PostsController < ApplicationController
   def update
   end
 
-  def destroy
+  def destory
   end
 
   def index
