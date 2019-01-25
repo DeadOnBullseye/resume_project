@@ -1,0 +1,23 @@
+<div class="menu">
+  <%= link_to "Projects", admin_projects_index_path, :class => current_class?(admin_projects_index_path) %>
+  <%= link_to "Categories", admin_categories_index_path, :class => current_class?(admin_categories_index_path) %>
+  <%= link_to "Users", admin_users_index_path, :class => current_class?(admin_users_index_path) %>
+</div>
+
+<div class="header">
+  <div class="header__left">
+    <a class="logo" onclick="window.location = '/home';">Gb</a>
+  </div>
+  <div class="filler"></div>
+  <div class="header__right">
+    <%= link_to "Projects", admin_projects_index_path, :class => current_class?(admin_projects_index_path) %>
+    <%= link_to "Categories", admin_categories_index_path, :class => current_class?(admin_categories_index_path) %>
+    <%= link_to "Users", admin_users_index_path, :class => current_class?(admin_users_index_path) %>
+  </div>
+
+  <div class="menu-btn" onclick="clickMenu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>

@@ -1,2 +1,20 @@
-<h1>Admin::Categories#new</h1>
-<p>Find me in app/views/admin/categories/new.html.erb</p>
+<div class="main" style="box-shadow: none; height: 100%; display: flex; flex-direction: column; justify-content: center; align-content: center;">
+  <div class="row" style="">
+    <div class="content" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <div class="form__heading" style="align-self: center;">Add New Category</div>
+      <%= form_for [:admin, @category] do |f| %>
+        <% if @category.errors.any? %>
+          <% @category.errors.full_messages.each do |msg| %>
+            <div><%= msg %></div>
+          <% end %>
+        <% end %>
+
+        <%= f.text_field :name, placeholder: "Name" %>
+        <div style="display: flex; width: 100%; height: 100%; align-items: center; justify-content: center;">
+          <%= f.submit "Submit", class:'btn' %>
+          <%= link_to "Cancel", admin_categories_path, class:'btn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
