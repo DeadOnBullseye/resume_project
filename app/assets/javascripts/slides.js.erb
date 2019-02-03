@@ -1,0 +1,57 @@
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides() {
+  showSlides(slideIndex += 1);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+  clearTimeout(timeId);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("slide");
+    var dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";
+    }
+
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    for (i = 0; i < slides.length; i++) {
+      var img = slides[i].getAttribute("data-slide");
+      console.log(img);
+      slides[i].childNodes[1].style.backgroundImage = img;
+    }
+
+    slides[slideIndex-1].style.display = "flex";
+    dots[slideIndex-1].className += " active";
+    setDelay(); // Change image every 2 seconds
+}
+
+function setDelay(i) {
+  timeId = setTimeout(function(){
+    plusSlides();
+  }, 5000);
+  console.log(timeId);
+}
+
+function featuredImage() {
+  var feat = document.querySelector(".featured");
+  console.log(feat);
+  var background  = feat.getAttribute("data-img");
+  console.log(background);
+  var image = feat.childNodes[1];
+  console.log(image);
+  image.style.backgroundImage = background;
+}
+
+featuredImage();

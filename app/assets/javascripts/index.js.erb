@@ -3,20 +3,20 @@ function onScroll() {
   addEventListener('scroll', function() {
     if (window.innerWidth > 600) {
       if (document.documentElement.scrollTop > 100) {
-        nav.style.backgroundColor = "rgba(15,15,15,1)"
-        nav.style.boxShadow = '0 3px 5px rgba(0,0,0,0.6)';
-        nav.style.transition = 'all .2s ease-out';
-        nav.style.padding = '0';
+        $(nav).css("background-color", "rgba(15,15,15,1)");
+        $(nav).css("box-shadow", "0 3px 5px rgba(0,0,0,0.6)");
+        $(nav).css("transition", "all .2s ease-out");
+        $(nav).css("padding", "0");
         $('.line').removeClass('scrollDown');
       } else {
-        nav.style.backgroundColor = "rgba(0,0,0,0)"
-        nav.style.boxShadow = '0 3px 5px rgba(0,0,0,0)';
-        nav.style.padding = '20px 0';
+        $(nav).css("background-color", "rgba(0,0,0,0)");
+        $(nav).css("box-shadow", "0 3px 5px rgba(0,0,0,0)");
+        $(nav).css("padding", "20px 0");
         $('.line').addClass('scrollDown');
       }
     } else {
-      nav.style.backgroundColor = "rgba(15,15,15,1)"
-      nav.style.padding = '0';
+      $(nav).css("background-color", "rgba(15,15,15,1)");
+      $(nav).css("padding", '0');
       $('.line').removeClass('scrollDown');
     }
   });
@@ -29,62 +29,5 @@ $('.menu-btn').on('click', event => {
   $('body').toggleClass('stop-scrolling');
 });
 
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides() {
-  showSlides(slideIndex += 1);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-  clearTimeout(timeId);
-}
-
-function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("slide");
-    var dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-
-    for (i = 0; i < slides.length; i++) {
-       slides[i].style.display = "none";
-    }
-
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-
-    for (i = 0; i < slides.length; i++) {
-      var img = slides[i].getAttribute("data-slide");
-      console.log(img);
-      slides[i].childNodes[1].style.backgroundImage = img;
-    }
-
-    slides[slideIndex-1].style.display = "flex";
-    dots[slideIndex-1].className += " active";
-    setDelay(); // Change image every 2 seconds
-}
-
-function setDelay(i) {
-  timeId = setTimeout(function(){
-    plusSlides();
-  }, 5000);
-  console.log(timeId);
-}
-
-function featuredImage() {
-  var feat = document.querySelector(".featured");
-  console.log(feat);
-  var background  = feat.getAttribute("data-img");
-  console.log(background);
-  var image = feat.childNodes[1];
-  console.log(image);
-  image.style.backgroundImage = background;
-}
-
-featuredImage();
 onScroll();
 clickMenu();
