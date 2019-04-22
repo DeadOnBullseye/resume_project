@@ -1,15 +1,19 @@
 <head>
-  <link rel="stylesheet" href="/assets/footer.sass.erb"> 
+  <link rel="stylesheet" href="/assets/footer.sass.erb">
 </head>
 <div class="footer">
-  <div class="footer-content" style="padding: 20px 20px;">
+  <div class="footer-content">
     <div class="footer-content__section-1">
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-codepen"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="mailto: deadonbullseye@gmail.com" class="mail"><i class="fas fa-envelope"></i></a>
+      <div class="footer-content__section-1_flex-1">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-content__section-1_flex-2">
+        <a href="#"><i class="fab fa-codepen"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="mailto: deadonbullseye@gmail.com" class="mail"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
     <div class="footer-content__section-2">
       <%= link_to "Home", home_path, :class => current_class?(home_path) %>
@@ -19,7 +23,7 @@
     </div>
     <hr class="footer-hr">
     <div class="footer-content__section-3">
-      Copyright &copy; 2019 Griffin Bunnell Design | All Rights Reserved |&nbsp; <%= link_to "Admin Login", admin_categories_index_path %>
+      Copyright &copy; 2019 Griffin Bunnell Design | All Rights Reserved
     </div>
   </div>
 </div>
