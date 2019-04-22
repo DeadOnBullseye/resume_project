@@ -1,167 +1,84 @@
+// Imports
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Ubuntu|Yellowtail')
+
+// Imports END
+
+// Color Swatch
+
 $primary-background: url(texture.png)
+
 $primary-color: rgba(66, 66, 66, 1)
 $primary-color-dark: rgba(29, 29, 29, 1)
+
 $secondary-color: #FDE5A9
 $secondary-color-dark: #96845a
+
+$blue: #00324D
+$red: #DF1825
+
+// Color Swatch END
+
+// Fonts
 
 $display-font: 'Yellowtail', cursive
 $heading-font: 'Josefin Sans', sans-serif
 $text-font: 'Ubuntu', sans-serif
 
-// *
-//   transition: .2s ease-in-out
+// Fonts END
+
+// Body Elements and Containers
 
 html
   margin: 0
   padding: 0
   height: 100%
   width: 100%
-  color: white
+  overflow-x: hidden
 
 body
-  margin: 0
-  padding: 0
-  height: 100%
-  width: 100%
+  font-size: 1rem
   color: white
   background-color: black
-
-hr
-  width: 70%
-  margin: 0 0 30px 0
-  z-index: 1
-  border: 1px solid $secondary-color
-  opacity: 0.5
-
-.stop-scrolling
-  overflow: hidden
-
-.filler
-  flex: 1 1 auto
-
-.header
-  display: flex
-  align-items: center
-  height: 60px
   width: 100%
-  position: fixed
-  z-index: 999
-  padding: 20px 0
-
-a
-  position: relative
-  text-decoration: none
-  color: white
-  padding: 5px 0
-  margin-right: 35px
-  font-family: $text-font
-  font-size: 1em
-  user-select: none
-  &:hover
-    color: white
-  &:before
-    content: ""
-    position: absolute
-    width: 100%
-    height: 2px
-    bottom: 0
-    left: 0
-    background-color: $secondary-color
-    visibility: hidden
-    -webkit-transform: scaleX(0)
-    transform: scaleX(0)
-    -webkit-transition: all 0.3s ease-in-out 0s
-  &:hover:before, &.active:before
-    visibility: visible
-    -webkit-transform: scaleX(1)
-    transform: scaleX(1)
-
-a.btn
-  padding: 0
-  margin: 15px
-
-a.btn:hover:before
-  visibility: visible
-  -webkit-transform: scaleX(0)
-  transform: scaleX(0)
-
-.header__left, .header__right
-  display: flex
-
-.logo
-  margin-left: 35px
-  font-family: $display-font
-  font-size: 2em
-  color: $secondary-color
-  transition: .4s ease-in-out
-  overflow: visible
-  user-select: none
-  cursor: pointer
-
-.header .logo:hover:before
-  visibility: hidden
-  -webkit-transform: scaleX(0)
-  transform: scaleX(0)
-
-.menu
-  transform: translateY(-150%)
-  position: fixed
-  z-index: 999
   height: 100%
-  width: 100%
-  background-image: $primary-background
-  transition: .2s ease-in-out
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
-  a
-    font-size: 1.5em
-    margin: 10px 0
-
-.menu__click
-  transform: translateY(0)
-
-.menu-btn
-  width: 25px
-  height: 20px
-  margin: 10px 15px 10px 0
-  position: relative
-  cursor: pointer
-  display: none
+  margin: 0
   padding: 0
-  z-index: 999
-  span
-    background-color: #fff
-    position: absolute
-    border-radius: 2px
-    transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4)
-    width: 100%
-    height: 4px
-    &:nth-child(1)
-      top: 0
-      left: 0
-    &:nth-child(2)
-      top: 8px
-      left: 0
-    &:nth-child(3)
-      bottom: 0
-      left: 0
-  &:not(.menu-btn__click):hover span
-    &:nth-child(1), &:nth-child(2), &:nth-child(3)
-      transform: scaleX(1)
-      left: 0
 
-.menu-btn__click span
-  &:nth-child(1)
-    top: 8px
-    background-color: $secondary-color
-  &:nth-child(2)
-    transform: scale(0)
-  &:nth-child(3)
-    transform: scale(0)
-    top: 8px
-    left: 0
+.main
+  width: auto
+  height: auto
+  margin: 0
+  padding: 0
+  position: relative
+  background-image: $primary-background
+  box-shadow: 0 5px 50px rgba(255, 255, 255, 0.2)
+
+.row
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 100%
+  position: relative
+  background-color: transparent
+
+.content
+  max-width: 1320px
+  width: 100%
+  height: auto
+  padding: 60px 60px
+
+.flex-column
+  flex-direction: column
+  justify-content: center
+
+.flex
+  display: flex
+  align-items: center
+
+// Body Elements and Containers END
+
+// Hero Container
 
 .hero-container
   display: flex
@@ -170,11 +87,7 @@ a.btn:hover:before
   position: relative
   height: 100%
   width: 100%
-  background: linear-gradient(to bottom right, #00324D, #DF1825 95%)
-
-// #00324D Blue
-// #DF1825 Red
-// #FDE5A9 Cream
+  background: linear-gradient(to bottom right, $blue, $red 95%)
 
 .hero-container_content
   width: 100%
@@ -213,6 +126,14 @@ a.btn:hover:before
   margin: auto 0 0 0
   padding: 40px 0
 
+// Hero Container END
+
+// Footer
+
+// Footer END
+
+// Other Elements
+
 .btn
   display: flex
   justify-content: center
@@ -233,61 +154,6 @@ a.btn:hover:before
     background-color: white
     color: #333
 
-.btn--file
-  position: relative
-  margin-left: -10px
-
-.btn--file label
-  text-overflow: ellipsis
-  white-space: nowrap
-  cursor: pointer
-  overflow: hidden
-  display: flex
-  justify-content: center
-  align-items: center
-  text-align: center
-  border-radius: 19px
-  height: 38px
-  width: 200px
-  padding: 0
-  border: 1px solid white
-  font-family: $text-font
-  font-size: 1em
-  transition: .2s ease-in-out
-  cursor: pointer
-  color: rgba(255,255,255,0.5)
-  box-sizing: content-box
-  margin: 0
-
-.btn--file input
-  position: absolute
-  display: inline-block
-  opacity: 0
-  width: 200px
-  cursor: pointer
-  margin: 0
-
-.btn--file input:hover + label
-  opacity: 1
-  background-color: white
-  color: #333
-
-#contact-page__btn
-  width: 38px
-  transform: rotate(90deg)
-  flex-direction: column
-  span
-    width: 16px
-    height: 2px
-    background-color: white
-    border-radius: 2px
-    &:nth-child(1)
-      transform: rotate(35deg) translateY(-4px)
-    &:nth-child(2)
-      transform: rotate(-35deg) translateY(4px)
-  &:hover span
-    background-color: #333
-
 .track
   margin-top: auto
   height: 70px
@@ -306,74 +172,33 @@ a.btn:hover:before
   animation-iteration-count: 1
   animation-timing-function: ease-in-out
 
-.scrollDown
-  animation-name: scrollDown
-  animation-duration: 2.3s
-  animation-iteration-count: infinite
-  animation-delay: 5s
+.stop-scrolling
+  overflow: hidden
 
-@keyframes scrollDown
-  0%
-    opacity: 0
-  40%
-    opacity: 1
-  50%
-    transform: translateY(120%)
-  75%
-    opacity: 1
-  100%
-    transform: translateY(120%)
-    opacity: 0
+.filler
+  flex: 1 1 auto
 
-.main
-  width: auto
-  height: auto
-  margin: 0
-  padding: 0
-  position: relative
-  background-image: $primary-background
-  box-shadow: 0 5px 50px rgba(255, 255, 255, 0.2)
+// Other Elements END
 
-.row
-  display: flex
-  justify-content: center
-  align-items: center
-  width: 100%
-  position: relative
-  background-color: transparent
+// Fonts Styles, Headings, and Text Elements
 
-.flex-column
-  flex-direction: column
-  justify-content: center
+a
+  text-decoration: none
+  color: #fff
 
-.flex
-  display: flex
-  align-items: center
+h1
+  text-align: center
 
-.content
-  max-width: 1300px
-  width: 100%
-  height: auto
-  padding: 60px 20px
+hr
+  width: 70%
+  margin: 0 0 30px 0
+  z-index: 1
+  border: 1px solid $secondary-color
+  opacity: 0.5
 
 .content__heading
   font-family: $heading-font
   font-size: 2em
-  // text-transform: uppercase
-  padding-left: 35px
-  border-left: 2px solid $secondary-color
-
-.content__heading-2
-  font-family: $heading-font
-  font-size: 3em
-  // text-transform: uppercase
-  padding-left: 35px
-  border-left: 2px solid $secondary-color
-
-.content__heading-3
-  font-family: $heading-font
-  font-size: 1.5em
-  // text-transform: uppercase
   padding-left: 35px
   border-left: 2px solid $secondary-color
 
@@ -384,405 +209,96 @@ a.btn:hover:before
   margin-top: 25px
   margin-bottom: 15px
 
-.text-btn
-  transition: .2s ease-in-out
-
-.text-btn:hover
-  color: $secondary-color
-
-.text-btn:hover:before
-  visibility: hidden
-  -webkit-transform: scaleX(0)
-  transform: scaleX(0)
-
-.footer
-  width: 100%
-  display: flex
-  text-align: center
-  position: relative
-  background-color: $primary-color-dark
-  font-family: $text-font
-  border-top: 2px solid $secondary-color
-
-.footer-hr
-  width: 70%
-  margin: 30px 50px
-  z-index: 1
-  border: 1px solid $primary-color
-  opacity: 0.7
-
-.footer-content
-  width: 100%
-  display: flex
-  justify-content: center
-  align-items: center
-  align-content: center
-  text-align: center
-  flex-direction: column
-
-.footer-content__section-1
-  display: flex
-  align-content: center
-  align-items: center
-  justify-content: space-around
-  text-align: center
-  width: 40%
-  height: 100%
-  a
-    margin: 17px 0
-    font-size: 1.2rem
-    color: black
-    &:hover:before, &.active:before
-      visibility: visible
-      -webkit-transform: scaleX(0)
-      transform: scaleX(0)
-
-.fab
-  width: 20px
-  padding: 15px
-  margin: 0
-  border-radius: 50%
-  background-color: $secondary-color-dark
-  color: white
-  transition: .2s ease-in-out
-
-.fas
-  width: 20px
-  padding: 15px
-  margin: 0
-  border-radius: 50%
-  background-color: $secondary-color-dark
-  color: white
-  transition: .2s ease-in-out
-
-.fa-twitter
-  &:hover
-    background-color: white
-    color: #38A1F3
-
-.fa-instagram
-  &:hover
-    background-color: white
-    color: #D12798
-
-.fa-linkedin
-  &:hover
-    background-color: white
-    color: #0077B5
-
-.fa-codepen
-  &:hover
-    background-color: white
-    color: #000
-
-.fa-github
-  &:hover
-    background-color: white
-    color: #333
-
-.fa-envelope
-  &:hover
-    background-color: white
-    color: #D44638
-
-.footer-content__section-2
-  display: flex
-  flex-direction: row
-  text-align: center
-  align-content: center
-  justify-content: space-around
-  align-items: center
-  width: 30%
-  height: 100%
-  margin-top: 15px
-  a
-    margin: 0
-
-.footer-content__section-3
-  display: flex
-  flex-direction: row
-  text-align: center
-  align-content: center
-  justify-content: center
-  align-items: center
-  width: 100%
-  height: 100%
-  opacity: 0.8
-  font-size: .8rem
-
-.container
-  display: flex
-  flex-direction: column
-  justify-content: center
-  height: 100%
-  width: 100%
-  position: relative
-
-form
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
-  align-self: center
-  min-width: 100%
-  max-width: 900px
-  padding: 20px
-  input
-    outline: none
-    width: 100%
-    max-width: 900px
-    padding: 10px
-    margin: 10px 0
-    font-family: $text-font
-    font-size: 1em
-    background-color: transparent
-    color: white
-    border: none
-    border: 2px solid white
-    border-radius: 25px
-    opacity: 0.7
-    transition: .3s ease-in-out
-    &::placeholder
-      opacity: 0.5
-    &:focus
-      opacity: 1
-      &::placeholder
-        opacity: 1
-        color: white
-  input[type="submit"]
-    display: flex
-    justify-content: center
-    align-items: center
-    text-align: center
-    border-radius: 19px
-    height: 38px
-    width: 100%
-    max-width: 200px
-    border: 1px solid white
-    font-family: $text-font
-    font-size: 1em
-    transition: .2s ease-in-out
-    cursor: pointer
-    color: white
-    opacity: 1
-    margin: 15px
-    padding: 0
-    &::placeholder
-      opacity: 1
-    &:hover
-      opacity: 1
-      background-color: white
-      color: #333
-  textarea
-    position: relative
-    outline: none
-    width: 100%
-    max-width: 900px
-    height: 200px
-    padding: 10px
-    margin: 10px 0
-    font-family: $text-font
-    font-size: 1em
-    background-color: transparent
-    color: white
-    border: none
-    border: 2px solid white
-    border-radius: 25px
-    opacity: 0.7
-    transition: .3s ease-in-out
-    resize: none
-    &::placeholder
-      opacity: 0.5
-    &:focus
-      opacity: 1
-      &::placeholder
-        opacity: 1
-        color: white
-    .options
-      margin-top: 80px
-      width: 100%
-      font-size: 1em
-      display: flex
-      justify-content: center
-      align-items: center
-      a
-        margin: 0
-        width: 49%
-        min-width: 49%
-        padding: 0
-        text-align: center
-        cursor: default
-        span
-          cursor: pointer
-          transition: .2s ease-in-out
-        &:nth-child(1)
-          border-right: 1px solid white
-          padding-right: 20px
-        &:nth-child(2)
-          border-left: 1px solid white
-          padding-left: 20px
-
-form .options a span:hover
-  color: $secondary-color
-
-form .options a:hover:before
-  visibility: hidden
-  -webkit-transform: scaleX(0)
-  transform: scaleX(0)
-
-.form__heading
-  align-self: flex-start
-  text-align: left
-  font-family: $heading-font
-  font-size: 3em
-  margin-bottom: 15px
-
-.form__text
-  font-family: $text-font
-  font-size: 1em
-  font-style: italic
-  margin-bottom: 80px
-  align-self: flex-start
-  text-align: left
-
-select
-  -moz-appearance: none
-  -webkit-appearance: none
-  font: $text-font
-  background-color: transparent
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="2" height="2" preserveAspectRatio="none"><polygon points="0,0 2,0 1,2" fill="white" /></svg>')
-  background-size: .65em .65em * .65 // Arbitary height sets triangle ratio
-  background-position: calc(100% - #{.7em}) center
-  background-repeat: no-repeat
-  cursor: pointer
-  user-select: none
-  width: 100%
-  max-width: 900px
-  padding: 10px
-  margin: 10px 0
-  height: 100%
-  font-family: $text-font
-  font-size: 1em
-  background-color: transparent
-  color: rgba(255,255,255,0.5)
-  border: none
-  border: 2px solid white
-  border-radius: 25px
-  opacity: 0.7
-  transition: .3s ease-in-out
-  &::placeholder
-    opacity: 0.5
-  &:focus
-    opacity: 1
-    color: rgba(255,255,255,0.5)
-    &::placeholder
-      opacity: 1
-      color: rgba(255,255,255,0.5)
-
-input, textarea, select
-  -ms-box-sizing: content-box
-  -moz-box-sizing: content-box
-  -webkit-box-sizing: content-box
-  box-sizing: content-box
-
 .italic
   font-style: italic
 
-.menu__click___logo
-  visibility: visible !important
-  opacity: 1 !important
+// Fonts Styles, Headings, and Text Elements END
 
-.image-slider
-  position: relative
+// Image Slider and Featured
+
+.slider
+  display: flex
+  justify-content: center
+  align-items: center
   width: 100%
   max-width: 800px
   height: 100%
-  max-height: 400px
-  border-radius: 5px
   overflow: hidden
-  display: flex
-  flex-direction: column
-  justify-content: flex-end
-  user-select: none
+  padding: 0
+
+.slider-outer
+  overflow: hidden
+  width: 100%
+  max-width: 800px
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.05)
+  padding: 0
+
+.slider-inner
+  width: 100%
+  max-width: 800px
+  height: 400px
+  position: relative
+  padding: 0
+  overflow: hidden
+  float: center
+  border-radius: 5px
 
 .slide
-  display: none
-  width: auto
-  height: 100%
-  min-height: 400px
-  flex-direction: column
-  justify-content: flex-end
-  cursor: pointer
-  background-color: transparent
-  transition: .4s ease-in-out
-  background-size: cover
-  background-repeat: no-repeat
-
-.slide:hover > .image
-  filter: grayscale(0%)
-
-.image-content
-  background-color: rgba(0, 0, 0, 0.8)
-  padding: 20px 20px
-  width: auto
-  max-width: 300px
-  height: auto
-  position: relative
-  border-top-right-radius: 5px
-
-.image
-  min-height: 100%
-  height: 100%
-  border-radius: 5px
-  width: auto
-  position: relative
-  background-size: cover
-  filter: grayscale(100%)
-  top: 34.3375%
-  transition: .4s ease-in-out
-
-.prev, .next
-  cursor: pointer
-  position: absolute
-  top: 50%
-  width: auto
-  margin-top: -22px
-  padding: 16px
-  color: white
-  font-weight: bold
-  font-size: 18px
-  transition: .6s ease-in-out
-  border-radius: 0 3px 3px 0
-  &:hover
-    background-color: rgba(0, 0, 0, 0.8)
-
-.next
-  right: 0
-  border-radius: 3px 0 0 3px
+  img
+    width: 110%
+    height: 110%
+    position: absolute
+    transition: all .5s ease-in-out
+    filter: grayscale(70%)
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    overflow: hidden
+  &:hover > img
+    filter: grayscale(0%)
+    transition: all .5s ease-in-out
 
 .dot-container
-  text-align: center
-  align-self: flex-end
-  margin-top: -40px
   position: absolute
-  margin: -10px 15px 10px -15px
-  width: auto
+  margin: 0
+  padding: 3px
   display: flex
+  z-index: 100
+  bottom: 0
+  right: 0
+  background-color: rgba(0, 0, 0, 0.7)
+  border-top-left-radius: 5px
 
 .dot
-  cursor: pointer
-  height: 7px
-  width: 7px
-  margin: 0 4px
-  border-radius: 50%
+  height: 8px
+  width: 8px
   background-color: #bbb
-  display: inline-block
-  transition: background-color .6s ease-in-out
+  margin: 3px
+  border-radius: 5px
+  transition: all 1s ease-in-out
   &.active
     background-color: $secondary-color
-  &:hover
-    background-color: $secondary-color
+    transition: all 1s ease-in-out
+
+.slide-content
+  background-color: rgba(0, 0, 0, 0.8)
+  padding: 20px 20px
+  width: 100%
+  max-width: 300px
+  height: auto
+  position: absolute
+  border-top-right-radius: 5px
+  bottom: 0
+  left: 0
+
+.slide-content__text
+  display: none
+  opacity: 0
+  transition: all 1s ease-in-out
+  &.active
+    display: inline-block
+    opacity: 1
+    transition: all 1s ease-in-out
 
 .featured
   position: relative
@@ -799,115 +315,117 @@ input, textarea, select
   box-shadow: 0 0 40px rgba(255, 255, 255, 0.05)
   cursor: pointer
 
-.featured:hover > .image
-  filter: grayscale(0%)
+.image-content
+  background-color: rgba(0, 0, 0, 0.8)
+  padding: 20px 20px
+  width: 100%
+  max-width: 300px
+  height: auto
+  position: absolute
+  border-top-right-radius: 5px
+  bottom: 0
+  left: 0
 
-.fade
-  animation-name: fade
-  animation-duration: 1.5s
+.image
+  height: 420px
+  bottom: 0
+  img
+    width: 110%
+    height: 110%
+    position: absolute
+    transition: all .5s ease-in-out
+    filter: grayscale(70%)
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    overflow: hidden
 
-@keyframes fade
-  from
+.featured
+  > .image
+    filter: grayscale(80%)
+  &:hover > .image
+    filter: grayscale(0%)
+
+// Image Slider and Featured END
+
+// Animations
+@keyframes scrollDown
+  0%
     opacity: 0
-  to
+
+  40%
     opacity: 1
 
+  50%
+    transform: translateY(120%)
+
+  75%
+    opacity: 1
+
+  100%
+    transform: translateY(120%)
+    opacity: 0
+
+
+.scrollDown
+  animation-name: scrollDown
+  animation-duration: 2.3s
+  animation-iteration-count: infinite
+  animation-delay: 5s
+
+// Animations END
+
+// Media Queries
 @media screen and (min-width: 1600px)
   #home-page
-    background-image: url(cutout.png)
+    background-image: url(/assets/cutout.png)
     background-size: 35%
     background-repeat: no-repeat
     background-position: center bottom
 
 @media screen and (max-width: 1200px)
-  .form
-    width: 100%
-    max-width: 400px
-    height: 100%
-    max-height: 550px
-    align-self: center
-    border-radius: 10px
-
   .content
     flex-direction: column
     justify-content: center
     align-items: center
     max-width: 800px
-
-  .image-slider
-    margin: 0 0 40px 0
-
   .featured
+    margin: 0
     width: 100%
     max-width: 800px
-    margin: 0
-
-  .footer-content__section-1
-    width: 50%
-
-@media screen and (max-width: 1000px)
-  .footer-content__section-2
-    width: 40%
+  .slider
+    margin: 0 0 40px 0
 
 @media screen and (max-width: 800px)
-  html, body
-    min-width: 300px
-
   .hero-container
     background-attachment: scroll
     background-position: center
-
-  .header
-    background-color: transparent !important
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0) !important
-    padding: 0 !important
-    a
-      display: none
-    .logo
-      display: inline-block
-      visibility: hidden
-      opacity: 0
-      margin-left: 15px
-
-  .menu-btn
-    display: inline-block
-
   .hero-container_content__heading
     font-size: 5em
-
-  .footer-content__section-1
-    width: 70%
-
-  .footer-content__section-2
-    width: 60%
 
 @media screen and (max-width: 600px)
   .hero-container_content
     padding: 20px
-
   .hero-container_content__heading
     font-size: 4em
-
-  .footer-content__section-1
-    width: 90%
-
-  .footer-content__section-2
-    width: 80%
+  .content
+    padding: 60px 30px
+  .slide-content, .image-content
+    min-width: 100%
+    border-top-right-radius: 0px
+  .dot-container
+    display: none
 
 @media screen and (max-width: 450px)
-  .footer-content__section-1
-    width: 100%
-
-  .footer-content__section-2
-    width: 90%
+  .hero-container_content__heading
+    font-size: 2.5em
 
 @media screen and (max-width: 400px)
-  .form
-    max-height: 100%
-    border-radius: 0
+  .content
+    padding: 40px 20px
+  .slider, .slider-inner, .slider-outer
+    height: 320px
+  .featured
+    max-height: 320px
 
-  form
-    width: 90%
-
-  .btn
-    max-width: 100%
+// Media Queries END

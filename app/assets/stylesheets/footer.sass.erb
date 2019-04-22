@@ -1,0 +1,198 @@
+// Imports
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Ubuntu|Yellowtail')
+
+// Imports END
+
+// Color Swatch
+
+$primary-background: url(texture.png)
+
+$primary-color: rgba(66, 66, 66, 1)
+$primary-color-dark: rgba(29, 29, 29, 1)
+
+$secondary-color: #FDE5A9
+$secondary-color-dark: #96845a
+
+$blue: #00324D
+$red: #DF1825
+
+// Color Swatch END
+
+// Fonts
+
+$display-font: 'Yellowtail', cursive
+$heading-font: 'Josefin Sans', sans-serif
+$text-font: 'Ubuntu', sans-serif
+
+// Fonts END
+
+// Footer
+
+.text-btn
+  transition: .2s ease-in-out
+
+.text-btn:hover
+  color: $secondary-color
+
+.text-btn:hover:before
+  visibility: hidden
+  -webkit-transform: scaleX(0)
+  transform: scaleX(0)
+
+.footer
+  width: 100%
+  display: flex
+  text-align: center
+  position: relative
+  background-color: $primary-color-dark
+  font-family: $text-font
+  border-top: 2px solid $secondary-color
+
+.footer-hr
+  width: 70%
+  margin: 30px 50px
+  z-index: 1
+  border: 1px solid $primary-color
+  opacity: 0.7
+
+.footer-content
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  align-content: center
+  text-align: center
+  flex-direction: column
+
+.footer-content__section-1
+  display: flex
+  align-content: center
+  align-items: center
+  justify-content: space-around
+  text-align: center
+  width: 40%
+  height: 100%
+  a
+    margin: 17px 0
+    font-size: 1.2rem
+    color: black
+    &:hover:before, &.active:before
+      visibility: visible
+      -webkit-transform: scaleX(0)
+      transform: scaleX(0)
+
+.footer-content__section-2
+  display: flex
+  flex-direction: row
+  text-align: center
+  align-content: center
+  justify-content: space-around
+  align-items: center
+  width: 30%
+  height: 100%
+  margin-top: 15px
+  a
+    margin: 0
+
+.footer-content__section-3
+  display: flex
+  flex-direction: row
+  text-align: center
+  align-content: center
+  justify-content: center
+  align-items: center
+  width: 100%
+  height: 100%
+  opacity: 0.8
+  font-size: .8rem
+
+// Footer END
+
+// Icons
+
+.fab
+  width: 20px
+  padding: 15px
+  margin: 0
+  border-radius: 50%
+  background-color: $secondary-color-dark
+  color: white
+  transition: .2s ease-in-out
+
+.fas
+  width: 20px
+  padding: 15px
+  margin: 0
+  border-radius: 50%
+  background-color: $secondary-color-dark
+  color: white
+  transition: .2s ease-in-out
+
+.fa-twitter
+  &:hover
+    background-color: white
+    color: #38A1F3
+
+.fa-instagram
+  &:hover
+    background-color: white
+    color: #D12798
+
+.fa-linkedin
+  &:hover
+    background-color: white
+    color: #0077B5
+
+.fa-codepen
+  &:hover
+    background-color: white
+    color: #000
+
+.fa-github
+  &:hover
+    background-color: white
+    color: #333
+
+.fa-envelope
+  &:hover
+    background-color: white
+    color: #D44638
+
+// Icons END
+
+// Media Queries
+
+@media screen and (max-width: 1200px)
+  .footer-content__section-1
+    width: 50%
+
+@media screen and (max-width: 1000px)
+  .footer-content__section-2
+    width: 40%
+
+@media screen and (max-width: 800px)
+  .footer-content__section-1
+    width: 70%
+
+  .footer-content__section-2
+    width: 60%
+
+@media screen and (max-width: 600px)
+  .footer-content__section-1
+    width: 100%
+    height: 100%
+    flex-wrap: wrap
+    flex-direction: row
+
+  .footer-content__section-2
+    width: 80%
+
+@media screen and (max-width: 450px)
+  .footer-content__section-1
+    width: 100%
+
+  .footer-content__section-2
+    width: 90%
+
+// Media Queries END

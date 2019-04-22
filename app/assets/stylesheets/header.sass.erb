@@ -1,0 +1,177 @@
+// Imports
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Ubuntu|Yellowtail')
+
+// Imports END
+
+// Color Swatch
+
+$primary-background: url(texture.png)
+
+$primary-color: rgba(66, 66, 66, 1)
+$primary-color-dark: rgba(29, 29, 29, 1)
+
+$secondary-color: #FDE5A9
+$secondary-color-dark: #96845a
+
+$blue: #00324D
+$red: #DF1825
+
+// Color Swatch END
+
+// Fonts
+
+$display-font: 'Yellowtail', cursive
+$heading-font: 'Josefin Sans', sans-serif
+$text-font: 'Ubuntu', sans-serif
+
+// Fonts END
+
+// Header
+
+.header
+  display: flex
+  align-items: center
+  height: 60px
+  width: 100%
+  position: fixed
+  z-index: 999
+  padding: 20px 0
+
+a
+  position: relative
+  text-decoration: none
+  color: white
+  padding: 5px 0
+  margin-right: 35px
+  font-family: $text-font
+  font-size: 1em
+  user-select: none
+  &:hover
+    color: white
+  &:before
+    content: ""
+    position: absolute
+    width: 100%
+    height: 2px
+    bottom: 0
+    left: 0
+    background-color: $secondary-color
+    visibility: hidden
+    -webkit-transform: scaleX(0)
+    transform: scaleX(0)
+    -webkit-transition: all 0.3s ease-in-out 0s
+  &:hover:before, &.active:before
+    visibility: visible
+    -webkit-transform: scaleX(1)
+    transform: scaleX(1)
+
+a.btn
+  padding: 0
+  margin: 15px
+
+a.btn:hover:before
+  visibility: visible
+  -webkit-transform: scaleX(0)
+  transform: scaleX(0)
+
+.header__left, .header__right
+  display: flex
+
+.logo
+  margin-left: 35px
+  font-family: $display-font
+  font-size: 2em
+  color: $secondary-color
+  transition: .4s ease-in-out
+  overflow: visible
+  user-select: none
+  cursor: pointer
+
+.header .logo:hover:before
+  visibility: hidden
+  -webkit-transform: scaleX(0)
+  transform: scaleX(0)
+
+.menu
+  transform: translateY(-150%)
+  position: fixed
+  z-index: 999
+  height: 100%
+  width: 100%
+  background-image: $primary-background
+  transition: .2s ease-in-out
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  a
+    font-size: 1.5em
+    margin: 10px 0
+
+.menu__click
+  transform: translateY(0)
+
+.menu-btn
+  width: 25px
+  height: 20px
+  margin: 10px 15px 10px 0
+  position: relative
+  cursor: pointer
+  display: none
+  padding: 0
+  z-index: 999
+  span
+    background-color: #fff
+    position: absolute
+    border-radius: 2px
+    transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4)
+    width: 100%
+    height: 4px
+    &:nth-child(1)
+      top: 0
+      left: 0
+    &:nth-child(2)
+      top: 8px
+      left: 0
+    &:nth-child(3)
+      bottom: 0
+      left: 0
+  &:not(.menu-btn__click):hover span
+    &:nth-child(1), &:nth-child(2), &:nth-child(3)
+      transform: scaleX(1)
+      left: 0
+
+.menu-btn__click span
+  &:nth-child(1)
+    top: 8px
+    background-color: $secondary-color
+  &:nth-child(2)
+    transform: scale(0)
+  &:nth-child(3)
+    transform: scale(0)
+    top: 8px
+    left: 0
+
+.menu__click___logo
+  visibility: visible !important
+  opacity: 1 !important
+
+// Header END
+
+// Media Queries
+
+@media screen and (max-width: 800px)
+  .header
+    background-color: transparent
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0)
+    padding: 0
+    a
+      display: none
+    .logo
+      display: inline-block
+      visibility: hidden
+      opacity: 0
+      margin-left: 15px
+    .menu-btn
+      display: inline-block

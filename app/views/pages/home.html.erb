@@ -5,75 +5,85 @@
 
   <%= render 'partials/header' %>
 
-  <div class="hero-container">
-    <div class="hero-container_content" id="home-page">
-      <span class="hero-container_strip">
-        <h1 class="hero-container_content__heading">Griffin Bunnell</h1>
-        <hr>
-        <div class="btn" onclick="window.location = '/contact';">Contact Me</div>
-      </span>
-      <div class="track">
-        <span class="line scrollDown"></span>
+    <div class="hero-container">
+      <div class="hero-container_content" id="home-page">
+        <span class="hero-container_strip">
+          <h1 class="hero-container_content__heading">Griffin Bunnell</h1>
+          <hr>
+          <div class="btn" onclick="window.location = '/contact';">Contact Me</div>
+        </span>
+        <div class="track">
+          <span class="line scrollDown"></span>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="main">
+    <div class="main">
+
     <div class="row">
       <div class="content flex">
-        <div class="image-slider">
+        <div class="slider">
 
-          <div class="slide fade" data-slide="url(assets/background.jpg)" onclick="window.location = '/projects';">
-            <div class="image"></div>
-            <div class="image-content">
-              <div class="content__heading">News Article 1</div>
-              <div class="content__text italic">
-                News from news article 1 right here.
+          <div class="slider-outer">
+
+            <div class="slider-inner">
+
+              <div class="dot-container">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
               </div>
-            </div>
-          </div>
-
-          <div class="slide fade" data-slide="url(assets/background2.jpg)" onclick="window.location = '/projects';">
-            <div class="image"></div>
-            <div class="image-content">
-              <div class="content__heading">News Article 2</div>
-              <div class="content__text italic">
-                News from news article 2 right here.
+              <div id="slideshow">
+                <div class="slide">
+                  <img style="background-image: url(assets/background.jpg);" class="active">
+                </div>
+                <div class="slide">
+                  <img style="background-image: url(assets/background2.jpg);">
+                </div>
+                <div class="slide">
+                  <img style="background-image: url(assets/background3.jpg);">
+                </div>
+                <div class="slide">
+                  <img style="background-image: url(assets/background4.jpg);">
+                </div>
               </div>
-            </div>
-          </div>
+              <div class="slide-content">
 
-          <div class="slide fade" data-slide="url(assets/background4.jpg)" onclick="window.location = '/projects';">
-            <div class="image"></div>
-            <div class="image-content">
-              <div class="content__heading">News Article 3</div>
-              <div class="content__text italic">
-                News from news article 3 right here.
+                <div class="slide-content__text active">
+                  <div class="content__heading">News 1</div>
+                  <div class="content__text italic">
+                    News post number 1
+                  </div>
+                </div>
+                <div class="slide-content__text">
+                  <div class="content__heading">News 2</div>
+                  <div class="content__text italic">
+                    News post number 2
+                  </div>
+                </div>
+                <div class="slide-content__text">
+                  <div class="content__heading">News 3</div>
+                  <div class="content__text italic">
+                    News post number 3
+                  </div>
+                </div>
+                <div class="slide-content__text">
+                  <div class="content__heading">News 4</div>
+                  <div class="content__text italic">
+                    News post number 4
+                  </div>
+                </div>
+
               </div>
-            </div>
-          </div>
 
-          <div class="slide fade" data-slide="url(assets/background5.jpg)" onclick="window.location = '/projects';">
-            <div class="image"></div>
-            <div class="image-content">
-              <div class="content__heading">News Article 4</div>
-              <div class="content__text italic">
-                News from news article 4 right here.
-              </div>
             </div>
-          </div>
 
-          <div class="dot-container">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
           </div>
 
         </div>
-
-        <div class="featured" data-img="url(assets/background.jpg)" onclick="window.location = '/projects';">
-          <div class="image"></div>
+        <div class="featured" onclick="window.location = '/projects';">
+          <div class="image"><img src="assets/background.jpg" alt="Assorted Glowing Shapes"></div>
           <div class="image-content">
             <div class="content__heading">Featured</div>
             <div class="content__text italic">
@@ -81,9 +91,7 @@
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
 
     <div class="row">
@@ -95,8 +103,9 @@
         <div class="btn" onclick="window.location = '/projects';" style="margin-top: 30px;">More</div>
       </div>
     </div>
-  </div>
 
-  <%= render 'partials/footer' %>
-  <%= javascript_include_tag 'slides', 'data-turbolinks-track': 'reload' %>
+    </div>
+
+    <%= render 'partials/footer' %>
+    <%= javascript_include_tag 'slides', 'data-turbolinks-track': 'reload' %>
 </body>
