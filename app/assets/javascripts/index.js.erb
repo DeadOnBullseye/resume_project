@@ -29,5 +29,26 @@ $('.menu-btn').on('click', event => {
   $('body').toggleClass('stop-scrolling');
 });
 
+$('.grid-btn_1').on('click', event => {
+  $('.grid-btn_1').addClass('grid-btn_active');
+  $('.grid-btn_2').removeClass('grid-btn_active');
+  $('.content').addClass('grid-list');
+  $('.content').removeClass('grid');
+});
+
+$('.grid-btn_2').on('click', event => {
+  $('.grid-btn_2').addClass('grid-btn_active');
+  $('.grid-btn_1').removeClass('grid-btn_active');
+  $('.content').addClass('grid');
+  $('.content').removeClass('grid-list');
+});
+
+$(window).resize(function(){
+	if ($(window).width() <= 1000){
+		$('.content').addClass('grid-list');
+    $('.content').removeClass('grid');
+	}
+});
+
 onScroll();
 clickMenu();
